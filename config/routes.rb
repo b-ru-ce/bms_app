@@ -1,4 +1,9 @@
 BmsApp::Application.routes.draw do
+  get 'articles/index'
+  get 'articles/:id/:alias' => 'articles#show'
+
+  root 'pages#home'
+
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'

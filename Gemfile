@@ -27,16 +27,17 @@ gem 'turbolinks'
 gem "haml-rails"
 
 gem 'rails_admin'
-
 gem 'dragonfly', '~> 1.0.0'
-
 gem "ckeditor"
 gem "paperclip"
-
 gem "cancan"
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+
+group :development do
+  gem 'annotate', :git => 'git://github.com/jeremyolliver/annotate_models.git', :branch => 'rake_compatibility'
+end
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
