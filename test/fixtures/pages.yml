@@ -1,0 +1,35 @@
+# == Schema Information
+#
+# Table name: pages
+#
+#  id           :integer          not null, primary key
+#  title        :string(255)
+#  text         :text
+#  purpose      :string(255)
+#  show_in_menu :boolean
+#  menu         :string(255)
+#  meta         :text
+#  created_at   :datetime
+#  updated_at   :datetime
+#  ancestry     :string(255)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  title: MyString
+  text: MyText
+  purpose: MyString
+  show_in_menu: false
+  menu: MyString
+  meta: MyText
+
+two:
+  id: 1
+  title: MyString
+  text: MyText
+  purpose: MyString
+  show_in_menu: false
+  menu: MyString
+  meta: MyText

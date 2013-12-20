@@ -1,4 +1,10 @@
 BmsApp::Application.routes.draw do
+
+
+
+  get "page/home"
+  get "page/page"
+
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'

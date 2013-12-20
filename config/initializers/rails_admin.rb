@@ -51,4 +51,83 @@ RailsAdmin.config do |config|
   # Anyway, here is how RailsAdmin saw your application's models when you ran the initializer:
 
 
+
+
+  config.actions do
+    # root actions
+    dashboard                     # mandatory
+    # collection actions
+    index                         # mandatory
+    new
+    export
+    history_index
+    bulk_delete
+    # member actions
+    show
+    edit
+    delete
+    history_show
+    show_in_app
+
+    # Add the nestable action for configured models
+    nestable
+  end
+
+
+
+  config.model Page do
+    weight 2
+
+    nestable_tree({
+                      position_field: :sort,
+                      max_depth: 3
+                  })
+
+    list do
+      field :title
+      field :purpose
+      field :show_in_menu
+    end
+
+    show do
+      field :id
+      field :title
+      field :text
+      field :created_at
+      field :updated_at
+    end
+
+    edit do
+      field :title
+      field :parent_id, :enum do
+        enum_method do
+          :parent_enum
+        end
+      end
+      field :purpose, :enum do
+        enum do
+          ['Каталог',  'Галерея']
+        end
+      end
+      field :text, :ck_editor
+      field :show_in_menu
+
+
+      field :menu, :enum do
+        enum do
+          ['Верхнее',  'Левое']
+        end
+      end
+      field :meta
+
+
+    end
+
+
+
+  end
+
+
+
+
 end
