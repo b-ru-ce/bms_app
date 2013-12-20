@@ -37,6 +37,8 @@ gem 'jbuilder', '~> 1.2'
 
 group :development do
   gem 'annotate', ">=2.6.0"
+  gem 'populator'
+  gem 'faker'
 end
 
 group :doc do

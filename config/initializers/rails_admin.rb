@@ -6,9 +6,10 @@ RailsAdmin.config do |config|
 
 
   ################  Global configuration  ################
+  config.authorize_with :cancan
 
   # Set the admin name here (optional second array element will appear in red). For example:
-  config.main_app_name = ['Bms App', 'Admin']
+  config.main_app_name = ['Site', 'Admin']
   # or for a more dynamic name:
   # config.main_app_name = Proc.new { |controller| [Rails.application.engine_name.titleize, controller.params['action'].titleize] }
 
@@ -16,10 +17,10 @@ RailsAdmin.config do |config|
   config.current_user_method { current_user } # auto-generated
 
   # If you want to track changes on your models:
-  # config.audit_with :history, 'User'
+  config.audit_with :history, 'MyConfig'
 
   # Or with a PaperTrail: (you need to install it first)
-  # config.audit_with :paper_trail, 'User'
+  #config.audit_with :paper_trail, 'MyConfig'
 
   # Display empty fields in show views:
   # config.compact_show_view = false

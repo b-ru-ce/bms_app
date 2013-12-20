@@ -11,7 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131220083442) do
+
+
+ActiveRecord::Schema.define(version: 20131220083514) do
 
   create_table "articles", force: true do |t|
     t.text     "title"
@@ -55,6 +57,14 @@ ActiveRecord::Schema.define(version: 20131220083442) do
 
   add_index "pages", ["ancestry"], name: "index_pages_on_ancestry"
 
+  create_table "my_configs", force: true do |t|
+    t.string   "key"
+    t.string   "key_ru"
+    t.text     "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"
     t.string   "username"
@@ -67,6 +77,12 @@ ActiveRecord::Schema.define(version: 20131220083442) do
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], name: "index_rails_admin_histories"
+
+  create_table "roles", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -81,6 +97,7 @@ ActiveRecord::Schema.define(version: 20131220083442) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "role_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

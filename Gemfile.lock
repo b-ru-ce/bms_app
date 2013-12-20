@@ -40,7 +40,7 @@ GEM
       orm_adapter
     climate_control (0.0.3)
       activesupport (>= 3.0)
-    cocaine (0.5.2)
+    cocaine (0.5.3)
       climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -49,7 +49,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    devise (3.1.1)
+    devise (3.2.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
@@ -60,15 +60,17 @@ GEM
       rack
     erubis (2.7.0)
     execjs (2.0.2)
+    faker (1.2.0)
+      i18n (~> 0.5)
     font-awesome-rails (4.0.3.0)
       railties (>= 3.2, < 5.0)
     haml (4.0.4)
       tilt
-    haml-rails (0.5.2)
-      actionpack (~> 4.0.1)
-      activesupport (~> 4.0.1)
+    haml-rails (0.5.3)
+      actionpack (>= 4.0.1)
+      activesupport (>= 4.0.1)
       haml (>= 3.1, < 5.0)
-      railties (~> 4.0.1)
+      railties (>= 4.0.1)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (1.5.3)
@@ -93,13 +95,14 @@ GEM
     nested_form (0.3.2)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
-    orm_adapter (0.4.0)
-    paperclip (3.5.1)
+    orm_adapter (0.5.0)
+    paperclip (3.5.2)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
-      cocaine (~> 0.5.0)
+      cocaine (~> 0.5.3)
       mime-types
     polyglot (0.3.3)
+    populator (1.0.0)
     rack (1.5.2)
     rack-pjax (0.7.0)
       nokogiri (~> 1.5)
@@ -139,12 +142,12 @@ GEM
       activesupport (= 4.0.2)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rake (10.1.0)
+    rake (10.1.1)
     rdoc (3.12.2)
       json (~> 1.4)
     remotipart (1.2.1)
     safe_yaml (0.9.7)
-    sass (3.2.12)
+    sass (3.2.13)
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
       sass (>= 3.1.10)
@@ -172,7 +175,7 @@ GEM
     turbolinks (2.1.0)
       coffee-rails
     tzinfo (0.3.38)
-    uglifier (2.3.3)
+    uglifier (2.4.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     warden (1.2.3)
@@ -189,10 +192,12 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   dragonfly (~> 1.0.0)
+  faker
   haml-rails
   jbuilder (~> 1.2)
   jquery-rails
   paperclip
+  populator
   rails (= 4.0.2)
   rails_admin
   rails_admin_nestable
