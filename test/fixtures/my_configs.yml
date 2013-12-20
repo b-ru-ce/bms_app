@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: my_configs
+#
+#  id         :integer          not null, primary key
+#  key        :string(255)
+#  key_ru     :string(255)
+#  value      :text
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  key: MyString
+  key_ru: MyString
+  value: MyText
+
+two:
+  key: MyString
+  key_ru: MyString
+  value: MyText

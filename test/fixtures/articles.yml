@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: articles
+#
+#  id              :integer          not null, primary key
+#  title           :text
+#  date            :date
+#  short_text      :text
+#  text            :text
+#  title_of_window :string(255)
+#  created_at      :datetime
+#  updated_at      :datetime
+#  image_uid       :string(255)
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
@@ -11,19 +26,3 @@ two:
   date: 2013-12-19
   short_text: MyText
   text: MyText
-
-# == Schema Information
-#
-# Table name: articles
-#
-#  id              :integer         not null, primary key
-#  title           :text
-#  date            :date
-#  short_text      :text
-#  text            :text
-#  title_of_window :string(255)
-#  created_at      :datetime
-#  updated_at      :datetime
-#  image_uid       :string(255)
-#
-

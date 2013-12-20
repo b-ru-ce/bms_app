@@ -36,7 +36,9 @@ gem "cancan"
 gem 'jbuilder', '~> 1.2'
 
 group :development do
-  gem 'annotate', :git => 'git://github.com/jeremyolliver/annotate_models.git', :branch => 'rake_compatibility'
+  gem 'annotate'
+  gem 'populator'
+  gem 'faker'
 end
 
 group :doc do
