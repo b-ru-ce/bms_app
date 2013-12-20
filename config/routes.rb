@@ -1,16 +1,14 @@
 BmsApp::Application.routes.draw do
-<<<<<<< HEAD
 
 
+  root 'pages#home'
 
   get "page/home"
   get "page/page"
-=======
   get 'articles/index'
   get 'articles/:id/:alias' => 'articles#show'
 
-  root 'pages#home'
->>>>>>> bddded3704946d06a7976dc816929f105af4bd9c
+
 
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users

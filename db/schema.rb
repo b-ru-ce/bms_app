@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20131220083442) do
-=======
-ActiveRecord::Schema.define(version: 20131219134944) do
 
   create_table "articles", force: true do |t|
     t.text     "title"
@@ -26,7 +23,6 @@ ActiveRecord::Schema.define(version: 20131219134944) do
     t.datetime "updated_at"
     t.string   "image_uid"
   end
->>>>>>> bddded3704946d06a7976dc816929f105af4bd9c
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -55,7 +51,6 @@ ActiveRecord::Schema.define(version: 20131219134944) do
     t.datetime "updated_at"
     t.string   "ancestry"
     t.integer  "sort"
-    t.string   "names_depth_cache"
   end
 
   add_index "pages", ["ancestry"], name: "index_pages_on_ancestry"

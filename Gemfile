@@ -36,7 +36,7 @@ gem "cancan"
 gem 'jbuilder', '~> 1.2'
 
 group :development do
-  gem 'annotate', :git => 'git://github.com/jeremyolliver/annotate_models.git', :branch => 'rake_compatibility'
+  gem 'annotate', ">=2.6.0"
 end
 
 group :doc do
@@ -45,10 +45,6 @@ group :doc do
 end
 
 
-group :development do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'annotate'
-end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
