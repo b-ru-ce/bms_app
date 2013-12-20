@@ -1,0 +1,5 @@
+%h1 Pages#home
+%p Find me in app/views/pages/home.html.haml
+
+= render partial: 'articles/article', collection: Article.last_news
+= link_to 'Все новости', '/articles/index'

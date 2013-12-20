@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # RailsAdmin config file. Generated on December 19, 2013 13:43
 # See github.com/sferik/rails_admin for more informations
 
@@ -27,7 +28,7 @@ RailsAdmin.config do |config|
   # config.default_items_per_page = 20
 
   # Exclude specific models (keep the others):
-  # config.excluded_models = []
+  config.excluded_models = [Ckeditor::Asset, Ckeditor::Picture, Ckeditor::AttachmentFile]
 
   # Include specific models (exclude the others):
   # config.included_models = []
@@ -45,7 +46,38 @@ RailsAdmin.config do |config|
   # This is your choice to make:
   #   - This initializer is loaded once at startup (modifications will show up when restarting the application) but all RailsAdmin configuration would stay in one place.
   #   - Models are reloaded at each request in development mode (when modified), which may smooth your RailsAdmin development workflow.
+  config.model Article do
+    navigation_label 'Контент'
+    weight -1
 
+    list do
+      field :date
+      field :title
+      field :short_text
+    end
+
+    edit do
+      field :title
+      field :date
+      field :image
+      field :short_text
+      field :text, :ck_editor
+      field :title_of_window
+    end
+
+    show do
+      field :id
+      field :date
+      field :title
+      field :image
+      field :short_text
+      field :text
+      field :title_of_window
+      field :created_at
+      field :updated_at
+    end
+
+  end
 
   # Now you probably need to tour the wiki a bit: https://github.com/sferik/rails_admin/wiki
   # Anyway, here is how RailsAdmin saw your application's models when you ran the initializer:
