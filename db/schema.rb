@@ -11,8 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-
 ActiveRecord::Schema.define(version: 20131220083514) do
 
   create_table "articles", force: true do |t|
@@ -42,6 +40,14 @@ ActiveRecord::Schema.define(version: 20131220083514) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
 
+  create_table "my_configs", force: true do |t|
+    t.string   "key"
+    t.string   "key_ru"
+    t.text     "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "pages", force: true do |t|
     t.string   "title"
     t.text     "text"
@@ -56,14 +62,6 @@ ActiveRecord::Schema.define(version: 20131220083514) do
   end
 
   add_index "pages", ["ancestry"], name: "index_pages_on_ancestry"
-
-  create_table "my_configs", force: true do |t|
-    t.string   "key"
-    t.string   "key_ru"
-    t.text     "value"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"

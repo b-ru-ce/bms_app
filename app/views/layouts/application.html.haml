@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %title= yield(:html_title)
+    %meta= yield(:html_meta)
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+
+  %body
+    %ul
+
+      - Page.menu_tree.each do |page|
+        %li
+          = link_to page.title, page_path(page.path)
+
+    = yield

@@ -83,4 +83,14 @@ module ApplicationHelper
     new_str = new_str.downcase.gsub(/-{2,}/, "-").gsub(/^-|-$/, "")
   end
 
+
+  def html_title(page_title)
+    content_for :html_title, page_title.to_s
+  end
+
+
+  def html_meta(page_meta)
+    content_for :html_meta, page_meta.to_s
+  end
+
 end
