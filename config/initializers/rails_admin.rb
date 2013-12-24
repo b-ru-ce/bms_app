@@ -58,12 +58,22 @@ RailsAdmin.config do |config|
     end
 
     edit do
-      field :title
-      field :date
-      field :image
-      field :short_text
-      field :text, :ck_editor
-      field :title_of_window
+      group :main do
+        label "Главная инфомация"
+        field :title
+        field :date
+        field :short_text
+        field :text, :ck_editor
+        field :image
+      end
+
+      group :image do
+        label "SEO-оптимизация"
+        field :title_of_window
+
+
+      end
+
     end
 
     show do

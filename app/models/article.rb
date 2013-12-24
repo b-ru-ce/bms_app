@@ -19,6 +19,7 @@ class Article < ActiveRecord::Base
 
   dragonfly_accessor :image
 
+
   validates :title, :presence => true
   validates :date, :presence => true
 
@@ -30,5 +31,7 @@ class Article < ActiveRecord::Base
   def to_param
     '/articles/' + id.to_s + '/' + transliterate(title)
   end
+
+
 
 end
