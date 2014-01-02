@@ -45,6 +45,16 @@ class Page < ActiveRecord::Base
 
   end
 
+  def html_title
+    if self.title_of_window.strip.blank?
+      default_title = MyConfig.get_config 'default_title'
+      default_title + ' - ' + self.title
+    else
+      self.title_of_window
+    end
+  end
+
+
 
 
 end

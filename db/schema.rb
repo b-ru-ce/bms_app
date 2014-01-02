@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131220083514) do
+ActiveRecord::Schema.define(version: 20140102104204) do
 
   create_table "articles", force: true do |t|
     t.text     "title"
     t.date     "date"
     t.text     "short_text"
     t.text     "text"
-    t.string   "title_of_window"
+    t.string   "title_of_window", default: ""
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_uid"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20131220083514) do
     t.datetime "updated_at"
     t.string   "ancestry"
     t.integer  "sort"
+    t.string   "title_of_window", default: ""
   end
 
   add_index "pages", ["ancestry"], name: "index_pages_on_ancestry"

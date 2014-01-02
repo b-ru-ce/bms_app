@@ -67,7 +67,7 @@ RailsAdmin.config do |config|
         field :image
       end
 
-      group :image do
+      group :seo do
         label "SEO-оптимизация"
         field :title_of_window
 
@@ -87,6 +87,83 @@ RailsAdmin.config do |config|
       field :created_at
       field :updated_at
     end
+
+
+
+
+  end
+
+  config.model Page do
+    weight -1
+    navigation_label 'Контент'
+
+    nestable_tree({
+                      position_field: :sort,
+                      max_depth: 3
+                  })
+
+    list do
+      field :title
+      field :purpose
+      field :show_in_menu
+    end
+
+    show do
+      field :id
+      field :title
+      field :text
+      field :created_at
+      field :updated_at
+    end
+
+    edit do
+      group :main do
+        label "Главная инфомация"
+        field :title
+        field :parent_id, :enum do
+          enum_method do
+            :parent_enum
+          end
+        end
+
+        field :text, :ck_editor
+
+      end
+
+      group :spec do
+        #active false
+        label "Служебная информация"
+        field :show_in_menu
+        field :purpose, :enum do
+          enum do
+            ['Каталог',  'Галерея']
+          end
+        end
+        field :menu, :enum do
+          enum do
+            ['Верхнее',  'Левое']
+          end
+        end
+
+      end
+
+
+      group :seo do
+        active false
+        label "SEO оптимизация"
+        field :title_of_window do
+          help "Оставьте это поле пустым хотите оставить заголовок по умолчанию"
+        end
+        field :meta do
+          help "Оставьте это поле пустым хотите оставить мета теги по умолчанию"
+        end
+
+
+    end
+
+    end
+
+
 
   end
 
@@ -118,57 +195,7 @@ RailsAdmin.config do |config|
 
 
 
-  config.model Page do
-    weight 2
 
-    nestable_tree({
-                      position_field: :sort,
-                      max_depth: 3
-                  })
-
-    list do
-      field :title
-      field :purpose
-      field :show_in_menu
-    end
-
-    show do
-      field :id
-      field :title
-      field :text
-      field :created_at
-      field :updated_at
-    end
-
-    edit do
-      field :title
-      field :parent_id, :enum do
-        enum_method do
-          :parent_enum
-        end
-      end
-      field :purpose, :enum do
-        enum do
-          ['Каталог',  'Галерея']
-        end
-      end
-      field :text, :ck_editor
-      field :show_in_menu
-
-
-      field :menu, :enum do
-        enum do
-          ['Верхнее',  'Левое']
-        end
-      end
-      field :meta
-
-
-    end
-
-
-
-  end
 
 
 

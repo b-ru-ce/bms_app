@@ -2,11 +2,10 @@ BmsApp::Application.routes.draw do
   root 'pages#home'
 
 
-  get '/pages/:id-:alias' => 'pages#show' , as: 'page'
-  get '/pages/:id-:alias' => 'pages#show' , as: 'pages'
-
+  get '/pages/:id-:alias' => 'pages#show', as: 'page'
+  
   get 'articles/index'
-  get 'articles/:id/:alias' => 'articles#show'
+  get 'articles/:id-:alias' => 'articles#show'
 
 
 

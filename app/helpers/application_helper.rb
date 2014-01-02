@@ -84,8 +84,15 @@ module ApplicationHelper
   end
 
 
-  def html_title(page_title)
-    content_for :html_title, page_title.to_s
+  def html_title(page_title = '')
+
+
+    if page_title.strip.blank?
+      content_for :html_title, (MyConfig.get_config 'default_title')
+    else
+      content_for :html_title, page_title.to_s
+    end
+
   end
 
 

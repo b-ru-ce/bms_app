@@ -29,7 +29,16 @@ class Article < ActiveRecord::Base
   scope :last_news, ->{ limit(2) }
 
   def to_param
-    '/articles/' + id.to_s + '/' + transliterate(title)
+    '/articles/' + id.to_s + '-' + transliterate(title)
+  end
+
+  def html_title
+    if self.title_of_window.strip.blank?
+      default_title = MyConfig.get_config 'default_title'
+      default_title + ' - ' + self.title
+    else
+      self.title_of_window
+    end
   end
 
 

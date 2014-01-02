@@ -1,8 +1,10 @@
-
 -# Set page title
-- html_title @page.title
+- html_title @page.html_title
 - html_meta @page.meta
 
 
 %h1= @page.title
-= raw @page.text
+
+
+-# Форматы даты времени храняться в config/locales/ru.yml
+= l @page.created_at, format: :short
