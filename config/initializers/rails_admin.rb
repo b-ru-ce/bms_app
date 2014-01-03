@@ -120,11 +120,11 @@ RailsAdmin.config do |config|
       group :main do
         label "Главная инфомация"
         field :title
-        field :parent_id, :enum do
-          enum_method do
-            :parent_enum
-          end
-        end
+        #field :parent_id, :enum do
+        #  enum_method do
+        #    :parent_enum
+        #  end
+        #end
 
         field :text, :ck_editor
 
@@ -136,14 +136,14 @@ RailsAdmin.config do |config|
         field :show_in_menu
         field :purpose, :enum do
           enum do
-            ['Каталог',  'Галерея']
+            [ ['Главная','/'] , ['Новости','/news'], ['Каталог','/catalog'],  ['Галерея','/gallery']]
           end
         end
-        field :menu, :enum do
-          enum do
-            ['Верхнее',  'Левое']
-          end
-        end
+        #field :menu, :enum do
+        #  enum do
+        #    ['Верхнее',  'Левое']
+        #  end
+        #end
 
       end
 

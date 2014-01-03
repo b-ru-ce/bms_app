@@ -22,6 +22,7 @@ class Page < ActiveRecord::Base
 
   default_scope {order('sort')}
   scope :purpose, lambda { |purpose| where(purpose: purpose).limit(1) }
+  scope :main_menu,  where(:show_in_menu=>true)
 
   def path
     {id:id, alias:self.alias}

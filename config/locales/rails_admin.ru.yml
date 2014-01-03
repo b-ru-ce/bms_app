@@ -30,6 +30,7 @@ ru:
         purpose: 'Назначение'
         menu: 'В каком меню отображать'
         meta: 'Мета теги'
+        title_of_window: 'Заголовок окна'
         created_at: "Создание"
         updated_at: "Обновление"
 
@@ -128,6 +129,7 @@ ru:
         menu: "История"
         breadcrumb: "история"
       nestable:
+        success: "Данные успешно обновленны"
         update: Обновить
         breadcrumb: Сортировка
         menu: Сортировать

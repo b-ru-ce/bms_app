@@ -3,8 +3,8 @@ BmsApp::Application.routes.draw do
 
 
   get '/pages/:id-:alias' => 'pages#show', as: 'page'
-  
-  get 'articles/index'
+
+  get 'news' => 'articles#index'
   get 'articles/:id-:alias' => 'articles#show'
 
 
