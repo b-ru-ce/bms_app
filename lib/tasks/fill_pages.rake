@@ -1,7 +1,7 @@
 namespace :db do
 
-  desc "Fill page"
-  task :fill_page => :environment do
+  desc "Fill pages"
+  task :fill_pages => :environment do
 
     require 'populator'
     require 'faker'
