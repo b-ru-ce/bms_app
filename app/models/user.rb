@@ -1,3 +1,15 @@
+class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :rememberable, :trackable, :validatable
+
+  belongs_to :role
+
+  def role?(name)
+    role and role.name == name
+  end
+end
+
 # == Schema Information
 #
 # Table name: users
@@ -17,15 +29,8 @@
 #  updated_at             :datetime
 #  role_id                :integer
 #
-
-class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :rememberable, :trackable, :validatable
-
-  belongs_to :role
-
-  def role?(name)
-    role and role.name == name
-  end
-end
+# Indexes
+#
+#  index_users_on_email                 (email) UNIQUE
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#

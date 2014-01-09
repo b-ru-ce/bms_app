@@ -1,19 +1,3 @@
-# == Schema Information
-#
-# Table name: pages
-#
-#  id           :integer          not null, primary key
-#  title        :string(255)
-#  text         :text
-#  purpose      :string(255)
-#  show_in_menu :boolean
-#  menu         :string(255)
-#  meta         :text
-#  created_at   :datetime
-#  updated_at   :datetime
-#  ancestry     :string(255)
-#
-
 class Page < ActiveRecord::Base
   include ApplicationHelper
   has_ancestry
@@ -59,3 +43,25 @@ class Page < ActiveRecord::Base
 
 
 end
+
+# == Schema Information
+#
+# Table name: pages
+#
+#  id              :integer          not null, primary key
+#  title           :string(255)
+#  text            :text
+#  purpose         :string(255)
+#  show_in_menu    :boolean
+#  menu            :string(255)
+#  meta            :text
+#  created_at      :datetime
+#  updated_at      :datetime
+#  ancestry        :string(255)
+#  sort            :integer
+#  title_of_window :string(255)      default("")
+#
+# Indexes
+#
+#  index_pages_on_ancestry  (ancestry)
+#

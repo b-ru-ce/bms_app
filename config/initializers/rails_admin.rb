@@ -96,10 +96,9 @@ RailsAdmin.config do |config|
   config.model Page do
     weight -1
     navigation_label 'Контент'
-
     nestable_tree({
                       position_field: :sort,
-                      max_depth: 3
+                      max_depth: 2
                   })
 
     list do
@@ -120,14 +119,7 @@ RailsAdmin.config do |config|
       group :main do
         label "Главная инфомация"
         field :title
-        #field :parent_id, :enum do
-        #  enum_method do
-        #    :parent_enum
-        #  end
-        #end
-
         field :text, :ck_editor
-
       end
 
       group :spec do
@@ -139,11 +131,6 @@ RailsAdmin.config do |config|
             [ ['Главная','/'] , ['Новости','/news'], ['Каталог','/catalog'],  ['Галерея','/gallery']]
           end
         end
-        #field :menu, :enum do
-        #  enum do
-        #    ['Верхнее',  'Левое']
-        #  end
-        #end
 
       end
 
