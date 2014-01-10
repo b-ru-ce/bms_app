@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Page < ActiveRecord::Base
   include ApplicationHelper
   has_ancestry
@@ -33,9 +34,6 @@ class Page < ActiveRecord::Base
   def html_title
     title_of_window.to_s.strip.blank? ? (MyConfig.get_config('default_title') + ' - ' + title) : title_of_window
   end
-
-
-
 
 end
 

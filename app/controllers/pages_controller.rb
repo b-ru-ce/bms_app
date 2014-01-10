@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @page = Page.purpose("/").first
+    @page = Page.purpose('/').first
   end
 
   def show
