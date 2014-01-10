@@ -25,7 +25,7 @@ class Article < ActiveRecord::Base
 
   paginates_per 10
 
-  default_scope order('date DESC')
+  default_scope {order('date DESC')}
   scope :last_news, ->{ limit(2) }
 
   def to_param
