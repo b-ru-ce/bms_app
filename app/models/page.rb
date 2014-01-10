@@ -13,7 +13,7 @@ class Page < ActiveRecord::Base
   end
 
   def alias
-    transliterate(title)
+    title.transliterate
   end
 
   def self.menu_tree

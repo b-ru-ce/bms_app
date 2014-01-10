@@ -14,7 +14,7 @@ class Article < ActiveRecord::Base
   scope :last_news, ->{ limit(2) }
 
   def to_param
-    '/articles/' + id.to_s + '-' + transliterate(title)
+    '/articles/' + id.to_s + '-' + title.transliterate
   end
 
   def html_title
