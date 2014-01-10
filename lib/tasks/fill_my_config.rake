@@ -10,7 +10,7 @@ namespace :db do
     MyConfig.create :key => 'facebook', :key_ru => 'Ссылка на социальную сеть Facebook', :value => '/'
     MyConfig.create :key => 'twitter', :key_ru => 'Ссылка на социальную сеть Twitter', :value => '/'
     MyConfig.create :key => 'odnokl', :key_ru => 'Ссылка на социальную сеть Одноклассники', :value => '/'
-    MyConfig.create key: 'title_of_window', key_ru: 'Заголовок окна по умолчанию', value: 'Сайт'
+    MyConfig.create key: 'default_title', key_ru: 'Заголовок окна по умолчанию', value: 'Сайт'
     MyConfig.create key: 'metrika', key_ru: 'Код счетчика статистики', value: 'код счетчика'
   end
 end

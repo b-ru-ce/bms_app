@@ -1,19 +1,4 @@
 # -*- encoding : utf-8 -*-
-# == Schema Information
-#
-# Table name: articles
-#
-#  id              :integer          not null, primary key
-#  title           :text
-#  date            :date
-#  short_text      :text
-#  text            :text
-#  title_of_window :string(255)
-#  created_at      :datetime
-#  updated_at      :datetime
-#  image_uid       :string(255)
-#
-
 class Article < ActiveRecord::Base
   include ApplicationHelper
 
@@ -33,7 +18,7 @@ class Article < ActiveRecord::Base
   end
 
   def html_title
-    if self.title_of_window.strip.blank?
+    if self.title_of_window.to_s.strip.blank?
       default_title = MyConfig.get_config 'default_title'
       default_title + ' - ' + self.title
     else
@@ -44,3 +29,18 @@ class Article < ActiveRecord::Base
 
 
 end
+
+# == Schema Information
+#
+# Table name: articles
+#
+#  id              :integer          not null, primary key
+#  title           :text
+#  date            :date
+#  short_text      :text
+#  text            :text
+#  title_of_window :string(255)      default("")
+#  created_at      :datetime
+#  updated_at      :datetime
+#  image_uid       :string(255)
+#

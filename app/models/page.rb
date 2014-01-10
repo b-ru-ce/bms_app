@@ -1,19 +1,3 @@
-# == Schema Information
-#
-# Table name: pages
-#
-#  id           :integer          not null, primary key
-#  title        :string(255)
-#  text         :text
-#  purpose      :string(255)
-#  show_in_menu :boolean
-#  menu         :string(255)
-#  meta         :text
-#  created_at   :datetime
-#  updated_at   :datetime
-#  ancestry     :string(255)
-#
-
 class Page < ActiveRecord::Base
   include ApplicationHelper
   has_ancestry
@@ -47,7 +31,7 @@ class Page < ActiveRecord::Base
   end
 
   def html_title
-    if self.title_of_window.strip.blank?
+    if self.title_of_window.to_s.strip.blank?
       default_title = MyConfig.get_config 'default_title'
       default_title + ' - ' + self.title
     else
@@ -59,3 +43,25 @@ class Page < ActiveRecord::Base
 
 
 end
+
+# == Schema Information
+#
+# Table name: pages
+#
+#  id              :integer          not null, primary key
+#  title           :string(255)
+#  text            :text
+#  purpose         :string(255)
+#  show_in_menu    :boolean
+#  menu            :string(255)
+#  meta            :text
+#  created_at      :datetime
+#  updated_at      :datetime
+#  ancestry        :string(255)
+#  sort            :integer
+#  title_of_window :string(255)      default("")
+#
+# Indexes
+#
+#  index_pages_on_ancestry  (ancestry)
+#

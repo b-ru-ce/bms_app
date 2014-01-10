@@ -5,6 +5,8 @@
 
 %h1= @page.title
 
+%p= raw @page.text
+
 
 -# Форматы даты времени храняться в config/locales/ru.yml
 = l @page.created_at, format: :short

@@ -1,3 +1,8 @@
+class Ckeditor::Asset < ActiveRecord::Base
+  include Ckeditor::Orm::ActiveRecord::AssetBase
+  include Ckeditor::Backend::Paperclip
+end
+
 # == Schema Information
 #
 # Table name: ckeditor_assets
@@ -14,8 +19,8 @@
 #  created_at        :datetime
 #  updated_at        :datetime
 #
-
-class Ckeditor::Asset < ActiveRecord::Base
-  include Ckeditor::Orm::ActiveRecord::AssetBase
-  include Ckeditor::Backend::Paperclip
-end
+# Indexes
+#
+#  idx_ckeditor_assetable       (assetable_type,assetable_id)
+#  idx_ckeditor_assetable_type  (assetable_type,type,assetable_id)
+#
