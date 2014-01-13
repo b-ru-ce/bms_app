@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140102104204) do
+ActiveRecord::Schema.define(version: 20140113115103) do
 
   create_table "articles", force: true do |t|
     t.text     "title"
@@ -82,6 +82,19 @@ ActiveRecord::Schema.define(version: 20140102104204) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "slides", force: true do |t|
+    t.text     "title"
+    t.string   "image_uid"
+    t.text     "text"
+    t.string   "url"
+    t.integer  "sort"
+    t.string   "ancestry"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "slides", ["ancestry"], name: "index_slides_on_ancestry"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

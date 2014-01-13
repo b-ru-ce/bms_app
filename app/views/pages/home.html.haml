@@ -3,7 +3,13 @@
 
 %h1 Главная
 %p= raw @page.text
+
+
 = render partial: 'articles/article', collection: Article.last_news
 = link_to 'Все новости', '/news'
+
+
+%ul= render partial: 'layouts/slide', collection: Slide.last
+
 
 

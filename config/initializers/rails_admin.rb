@@ -93,6 +93,35 @@ RailsAdmin.config do |config|
 
   end
 
+  config.model Slide do
+    navigation_label 'Контент'
+    weight -1
+    nestable_list({ position_field: :sort })
+
+    list do
+      field :title
+      field :image
+      field :url
+    end
+
+    show do
+      field :id
+      field :title
+      field :image
+      field :url
+      field :text
+      field :created_at
+      field :updated_at
+    end
+
+    edit do
+      field :title
+      field :image
+      field :url
+      field :text, :ck_editor
+    end
+  end
+
   config.model Page do
     weight -1
     navigation_label 'Контент'
@@ -158,7 +187,54 @@ RailsAdmin.config do |config|
   # Anyway, here is how RailsAdmin saw your application's models when you ran the initializer:
 
 
+  config.model MyConfig do
+    navigation_label 'Общее'
+    weight -2
 
+    list do
+      field :key_ru
+      field :value
+    end
+
+    show do
+      field :id
+      field :key do
+        visible do
+          bindings[:view]._current_user.role?('superadmin')
+        end
+      end
+      field :key_ru
+      field :value
+      field :created_at
+      field :updated_at
+    end
+
+    edit do
+      field :key do
+        visible do
+          bindings[:view]._current_user.role?('superadmin')
+        end
+      end
+      field :key_ru do
+        visible do
+          bindings[:view]._current_user.role?('superadmin')
+        end
+      end
+      field :value
+    end
+  end
+
+  config.model User do
+    navigation_label 'Общее'
+    weight -3
+
+    edit do
+      field :role
+      field :email
+      field :password
+      field :password_confirmation
+    end
+  end
 
   config.actions do
     # root actions
