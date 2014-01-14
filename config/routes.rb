@@ -7,7 +7,7 @@ BmsApp::Application.routes.draw do
   get 'news' => 'articles#index'
   get 'news/:id-:alias' => 'articles#show'
 
-  get 'reviews' => 'pages#reviews'
+  get 'reviews' => 'reviews#index'
 
 
 
