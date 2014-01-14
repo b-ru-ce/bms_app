@@ -5,7 +5,6 @@ namespace :db do
 
     require 'populator'
     require 'faker'
-    ActiveRecord::Base.extend Dragonfly::Model
 
     Slide.destroy_all
     3.times do
