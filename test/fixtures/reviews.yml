@@ -1,0 +1,40 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  desc: MyText
+  short_text: MyText
+  text: MyText
+  show_on_main: false
+  sort: 1
+  ancestry: MyString
+
+two:
+  name: MyString
+  desc: MyText
+  short_text: MyText
+  text: MyText
+  show_on_main: false
+  sort: 1
+  ancestry: MyString
+
+# == Schema Information
+#
+# Table name: reviews
+#
+#  id           :integer          not null, primary key
+#  name         :string(255)
+#  desc         :text
+#  short_text   :text
+#  text         :text
+#  show_on_main :boolean
+#  sort         :integer
+#  ancestry     :string(255)
+#  created_at   :datetime
+#  updated_at   :datetime
+#  image_uid    :string(255)
+#
+# Indexes
+#
+#  index_reviews_on_ancestry  (ancestry)
+#

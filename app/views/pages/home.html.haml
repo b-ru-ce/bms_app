@@ -11,5 +11,8 @@
 
 %ul= render partial: 'layouts/slide', collection: Slide.last
 
+%ul= render partial: 'layouts/review', collection: Review.main
+= link_to 'Все отзывы', '/reviews'
+
 
 
