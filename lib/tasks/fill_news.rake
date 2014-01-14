@@ -17,7 +17,7 @@ namespace :db do
 
     dates = ((Date.today - 10)..(Date.today + 10)).to_a
     20.times do
-      article = Article.new title: Populator.words(1..3).titleize, date: dates.shuffle.first, short_text: Populator.sentences(2..10), text: Populator.sentences(20..30), image: File.new('app/assets/images/files/news.jpg')
+      article = Article.new title: Populator.words(1..3).titleize, date: dates.shuffle.first, short_text: Populator.sentences(2..10), text: Populator.sentences(20..30), image: File.new('vendor/bms/images/news.jpg')
       article.save(:validate => false)
     end
 
