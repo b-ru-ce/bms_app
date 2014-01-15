@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class PhotoGalleriesController < ApplicationController
   def index
     @galleries = PhotoGallery.all
