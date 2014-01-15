@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Page < ActiveRecord::Base
-  include ApplicationHelper
+  include PathWithAlias
   has_ancestry
 
   validates :title, presence: true
@@ -8,14 +8,6 @@ class Page < ActiveRecord::Base
   default_scope {order('sort')}
   scope :purpose, lambda { |purpose| where(purpose: purpose).limit(1) }
   scope :main_menu,  where(:show_in_menu=>true)
-
-  def path
-    {id:id, alias:self.alias}
-  end
-
-  def alias
-    title.transliterate
-  end
 
   def self.menu_tree
     Page.all.each { |c| c.ancestry = c.ancestry.to_s + (c.ancestry != nil ? "/" : '') + c.id.to_s

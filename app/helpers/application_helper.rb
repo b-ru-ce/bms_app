@@ -12,4 +12,5 @@ module ApplicationHelper
   def html_meta(page_meta)
     content_for :html_meta, page_meta.to_s
   end
+
 end

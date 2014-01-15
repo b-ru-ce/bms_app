@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140115025030) do
+ActiveRecord::Schema.define(version: 20140115064522) do
 
   create_table "articles", force: true do |t|
     t.text     "title"
@@ -64,24 +64,26 @@ ActiveRecord::Schema.define(version: 20140115025030) do
 
   add_index "pages", ["ancestry"], name: "index_pages_on_ancestry"
 
-  create_table "photogalleries", force: true do |t|
+  create_table "photo_galleries", force: true do |t|
     t.text     "title"
     t.integer  "sort"
     t.string   "ancestry"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "title_of_window"
   end
 
-  add_index "photogalleries", ["ancestry"], name: "index_photogalleries_on_ancestry"
+  add_index "photo_galleries", ["ancestry"], name: "index_photo_galleries_on_ancestry"
 
   create_table "photos", force: true do |t|
-    t.integer  "photogallery_id"
+    t.integer  "photo_gallery_id"
     t.string   "image_uid"
     t.text     "description"
     t.integer  "sort"
     t.string   "ancestry"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "main"
   end
 
   add_index "photos", ["ancestry"], name: "index_photos_on_ancestry"

@@ -5,9 +5,12 @@ BmsApp::Application.routes.draw do
   get '/pages/:id-:alias' => 'pages#show', as: 'page'
 
   get 'news' => 'articles#index'
-  get 'news/:id-:alias' => 'articles#show'
+  get '/news/:id-:alias' => 'articles#show', as: 'article'
 
   get 'reviews' => 'reviews#index'
+
+  get 'gallery' => 'photo_galleries#index'
+  get '/galleries/:id-:alias' => 'photo_galleries#show', as: 'photo_gallery'
 
 
 

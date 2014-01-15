@@ -1,0 +1,28 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyText
+  sort: 1
+  ancestry: MyString
+
+two:
+  title: MyText
+  sort: 1
+  ancestry: MyString
+
+# == Schema Information
+#
+# Table name: photo_galleries
+#
+#  id              :integer          not null, primary key
+#  title           :text
+#  sort            :integer
+#  ancestry        :string(255)
+#  created_at      :datetime
+#  updated_at      :datetime
+#  title_of_window :string(255)
+#
+# Indexes
+#
+#  index_photo_galleries_on_ancestry  (ancestry)
+#
