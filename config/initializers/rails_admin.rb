@@ -219,6 +219,39 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model Feedback do
+    navigation_label 'Общее'
+    weight -2
+
+    list do
+      field :name
+      field :phone
+      field :email
+      field :theme
+      field :created_at
+    end
+
+    show do
+      field :id
+      field :name
+      field :phone
+      field :email
+      field :theme
+      field :text
+      field :created_at
+      field :updated_at
+    end
+
+    edit do
+      field :name
+      field :phone
+      field :email
+      field :theme
+      field :text
+    end
+  end
+
+
   config.model Page do
     weight -1
     navigation_label 'Контент'
@@ -254,7 +287,7 @@ RailsAdmin.config do |config|
         field :show_in_menu
         field :purpose, :enum do
           enum do
-            [ ['Главная','/'] , ['Новости','/news'], ['Каталог','/catalog'],  ['Галерея','/gallery'], ['Отзывы', '/reviews']]
+            [ ['Главная','/'] , ['Новости','/news'], ['Каталог','/catalog'],  ['Галерея','/gallery'], ['Отзывы', '/reviews'], ['Контакты', '/contacts']]
           end
         end
 

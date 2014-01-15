@@ -12,6 +12,9 @@ BmsApp::Application.routes.draw do
   get 'gallery' => 'photo_galleries#index'
   get '/galleries/:id-:alias' => 'photo_galleries#show', as: 'photo_gallery'
 
+  get 'contacts' => 'feedbacks#new'
+  resources :feedbacks
+
 
 
   mount Ckeditor::Engine => '/ckeditor'

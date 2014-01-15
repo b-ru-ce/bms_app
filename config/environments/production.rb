@@ -1,6 +1,13 @@
 BmsApp::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :address => "smtp.yandex.ru",
+      :port => 25,
+      :authentication => :login, #или :plain
+      :user_name => "no-reply@buzuluk.bz",
+      :password => "L3W00i9v"
+  }
   # Code is not reloaded between requests.
   config.cache_classes = true
 
