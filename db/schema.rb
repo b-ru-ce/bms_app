@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140114092756) do
+ActiveRecord::Schema.define(version: 20140115025030) do
 
   create_table "articles", force: true do |t|
     t.text     "title"
@@ -63,6 +63,28 @@ ActiveRecord::Schema.define(version: 20140114092756) do
   end
 
   add_index "pages", ["ancestry"], name: "index_pages_on_ancestry"
+
+  create_table "photogalleries", force: true do |t|
+    t.text     "title"
+    t.integer  "sort"
+    t.string   "ancestry"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "photogalleries", ["ancestry"], name: "index_photogalleries_on_ancestry"
+
+  create_table "photos", force: true do |t|
+    t.integer  "photogallery_id"
+    t.string   "image_uid"
+    t.text     "description"
+    t.integer  "sort"
+    t.string   "ancestry"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "photos", ["ancestry"], name: "index_photos_on_ancestry"
 
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"
