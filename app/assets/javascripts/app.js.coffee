@@ -4,6 +4,7 @@ $(document).bind 'page:change', ->
 ready = ->
   $('.gallery').fancybox()
   feedback()
+  catalog()
 
 
 $(document).ready(ready)

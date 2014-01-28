@@ -15,7 +15,9 @@ BmsApp::Application.routes.draw do
   get 'contacts' => 'feedbacks#new'
   resources :feedbacks
 
-
+  get '/catalog' => 'catalog#index'
+  get '/catalog/:id-:alias' => 'catalog#show_category', as: 'category'
+  get '/catalog/:category_alias/:id-:alias' => 'catalog#show_product', as: 'product'
 
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140115073846) do
+ActiveRecord::Schema.define(version: 20140127091722) do
 
   create_table "articles", force: true do |t|
     t.text     "title"
@@ -23,6 +23,18 @@ ActiveRecord::Schema.define(version: 20140115073846) do
     t.datetime "updated_at"
     t.string   "image_uid"
   end
+
+  create_table "categories", force: true do |t|
+    t.string   "title"
+    t.text     "meta"
+    t.string   "title_of_window"
+    t.string   "ancestry"
+    t.integer  "sort"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "categories", ["ancestry"], name: "index_categories_on_ancestry"
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -97,6 +109,22 @@ ActiveRecord::Schema.define(version: 20140115073846) do
   end
 
   add_index "photos", ["ancestry"], name: "index_photos_on_ancestry"
+
+  create_table "products", force: true do |t|
+    t.integer  "category_id"
+    t.string   "title"
+    t.string   "image_uid"
+    t.integer  "price"
+    t.text     "text"
+    t.integer  "sort"
+    t.string   "ancestry"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title_of_window"
+    t.text     "meta"
+  end
+
+  add_index "products", ["ancestry"], name: "index_products_on_ancestry"
 
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"

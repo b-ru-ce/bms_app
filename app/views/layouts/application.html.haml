@@ -9,6 +9,8 @@
 
   %body
     = render 'layouts/menu/menu_wrapper'
+    = render 'layouts/breadcrumbs' unless current_page?(root_url)
+
     = yield
     =raw MyConfig.get_config('metrika')
     = render 'layouts/dialogs'

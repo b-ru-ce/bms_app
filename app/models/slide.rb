@@ -9,7 +9,7 @@ class Slide < ActiveRecord::Base
   validates :image_uid, presence: true
 
   default_scope { order('sort') }
-  scope :last, limit(3)
+  scope :last, -> { limit(3) }
 end
 
 # == Schema Information

@@ -7,7 +7,7 @@ class Page < ActiveRecord::Base
 
   default_scope {order('sort')}
   scope :purpose, lambda { |purpose| where(purpose: purpose).limit(1) }
-  scope :main_menu,  where(:show_in_menu=>true)
+  scope :main_menu,  ->{ where(:show_in_menu=>true) }
 
   def self.menu_tree
     Page.all.each { |c| c.ancestry = c.ancestry.to_s + (c.ancestry != nil ? "/" : '') + c.id.to_s
