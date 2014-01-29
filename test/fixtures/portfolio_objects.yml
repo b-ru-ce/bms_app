@@ -1,0 +1,38 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  image_uid: MyString
+  short_text: MyText
+  text: MyText
+  sort: 1
+  ancestry: MyString
+
+two:
+  title: MyString
+  image_uid: MyString
+  short_text: MyText
+  text: MyText
+  sort: 1
+  ancestry: MyString
+
+# == Schema Information
+#
+# Table name: portfolio_objects
+#
+#  id              :integer          not null, primary key
+#  title           :string(255)
+#  image_uid       :string(255)
+#  short_text      :text
+#  text            :text
+#  sort            :integer
+#  ancestry        :string(255)
+#  created_at      :datetime
+#  updated_at      :datetime
+#  title_of_window :string(255)
+#  meta            :text
+#
+# Indexes
+#
+#  index_portfolio_objects_on_ancestry  (ancestry)
+#

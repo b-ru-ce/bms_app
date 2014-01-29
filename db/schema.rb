@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140128090419) do
+ActiveRecord::Schema.define(version: 20140129100713) do
 
   create_table "articles", force: true do |t|
     t.text     "title"
@@ -112,6 +112,21 @@ ActiveRecord::Schema.define(version: 20140128090419) do
 
   add_index "photos", ["ancestry"], name: "index_photos_on_ancestry"
 
+  create_table "portfolio_objects", force: true do |t|
+    t.string   "title"
+    t.string   "image_uid"
+    t.text     "short_text"
+    t.text     "text"
+    t.integer  "sort"
+    t.string   "ancestry"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title_of_window"
+    t.text     "meta"
+  end
+
+  add_index "portfolio_objects", ["ancestry"], name: "index_portfolio_objects_on_ancestry"
+
   create_table "products", force: true do |t|
     t.integer  "category_id"
     t.string   "title"
@@ -161,6 +176,21 @@ ActiveRecord::Schema.define(version: 20140128090419) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "services", force: true do |t|
+    t.string   "title"
+    t.string   "image_uid"
+    t.text     "short_text"
+    t.text     "text"
+    t.integer  "sort"
+    t.string   "ancestry"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title_of_window"
+    t.text     "meta"
+  end
+
+  add_index "services", ["ancestry"], name: "index_services_on_ancestry"
 
   create_table "slides", force: true do |t|
     t.text     "title"

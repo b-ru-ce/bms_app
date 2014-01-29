@@ -68,8 +68,14 @@ RailsAdmin.config do |config|
       end
 
       group :seo do
-        label "SEO-оптимизация"
-        field :title_of_window
+        active false
+        label 'SEO оптимизация'
+        field :title_of_window do
+          help 'Оставьте это поле пустым, если хотите оставить заголовок по умолчанию'
+        end
+        field :meta do
+          help 'Оставьте это поле пустым, если хотите оставить мета теги по умолчанию'
+        end
       end
 
     end
@@ -151,9 +157,14 @@ RailsAdmin.config do |config|
       end
 
       group :seo do
-        label "SEO-оптимизация"
-        field :title_of_window
-        field :meta
+        active false
+        label 'SEO оптимизация'
+        field :title_of_window do
+          help 'Оставьте это поле пустым, если хотите оставить заголовок по умолчанию'
+        end
+        field :meta do
+          help 'Оставьте это поле пустым, если хотите оставить мета теги по умолчанию'
+        end
       end
 
     end
@@ -196,9 +207,14 @@ RailsAdmin.config do |config|
       end
 
       group :seo do
-        label "SEO-оптимизация"
-        field :title_of_window
-        field :meta
+        active false
+        label 'SEO оптимизация'
+        field :title_of_window do
+          help 'Оставьте это поле пустым, если хотите оставить заголовок по умолчанию'
+        end
+        field :meta do
+          help 'Оставьте это поле пустым, если хотите оставить мета теги по умолчанию'
+        end
       end
 
     end
@@ -232,8 +248,14 @@ RailsAdmin.config do |config|
       end
 
       group :seo do
-        label "SEO-оптимизация"
-        field :title_of_window
+        active false
+        label 'SEO оптимизация'
+        field :title_of_window do
+          help 'Оставьте это поле пустым, если хотите оставить заголовок по умолчанию'
+        end
+        field :meta do
+          help 'Оставьте это поле пустым, если хотите оставить мета теги по умолчанию'
+        end
       end
 
     end
@@ -300,6 +322,98 @@ RailsAdmin.config do |config|
       field :short_text
       field :text, :ck_editor
       field :show_on_main
+    end
+  end
+
+  config.model PortfolioObject do
+    navigation_label 'Контент'
+    weight -1
+    nestable_list({ position_field: :sort })
+
+    list do
+      field :title
+      field :image
+      field :short_text
+    end
+
+    show do
+      field :id
+      field :title
+      field :image
+      field :short_text
+      field :text
+      field :title_of_window
+      field :meta
+      field :created_at
+      field :updated_at
+    end
+
+    edit do
+      group :main do
+        label "Главная инфомация"
+        field :title
+        field :image
+        field :short_text
+        field :text, :ck_editor
+      end
+
+      group :seo do
+        active false
+        label 'SEO оптимизация'
+        field :title_of_window do
+          help 'Оставьте это поле пустым, если хотите оставить заголовок по умолчанию'
+        end
+        field :meta do
+          help 'Оставьте это поле пустым, если хотите оставить мета теги по умолчанию'
+        end
+      end
+
+    end
+  end
+
+  config.model Service do
+    navigation_label 'Контент'
+    weight -1
+    nestable_list({ position_field: :sort })
+
+    list do
+      field :title
+      field :image
+      field :short_text
+    end
+
+    show do
+      field :id
+      field :title
+      field :image
+      field :short_text
+      field :text
+      field :title_of_window
+      field :meta
+      field :created_at
+      field :updated_at
+    end
+
+    edit do
+      group :main do
+        label "Главная инфомация"
+        field :title
+        field :image
+        field :short_text
+        field :text, :ck_editor
+      end
+
+      group :seo do
+        active false
+        label 'SEO оптимизация'
+        field :title_of_window do
+          help 'Оставьте это поле пустым, если хотите оставить заголовок по умолчанию'
+        end
+        field :meta do
+          help 'Оставьте это поле пустым, если хотите оставить мета теги по умолчанию'
+        end
+      end
+
     end
   end
 
@@ -370,7 +484,7 @@ RailsAdmin.config do |config|
         field :show_in_menu
         field :purpose, :enum do
           enum do
-            [ ['Главная', '/'] , ['Новости', '/news'], ['Каталог', '/catalog'],  ['Галерея', '/gallery'], ['О компании', '/about'], ['Отзывы', '/reviews'], ['Контакты', '/contacts'] ]
+            [ ['Главная', '/'] , ['Новости', '/news'], ['Каталог', '/catalog'],  ['Галерея', '/gallery'], ['О компании', '/about'], ['Отзывы', '/reviews'], ['Контакты', '/contacts'], ['Портфолио', '/portfolio'], ['Услуги', '/services'] ]
           end
         end
 

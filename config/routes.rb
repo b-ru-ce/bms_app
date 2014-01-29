@@ -19,6 +19,12 @@ BmsApp::Application.routes.draw do
   get '/catalog/:id-:alias' => 'catalog#show_category', as: 'category'
   get '/catalog/:category_alias/:id-:alias' => 'catalog#show_product', as: 'product'
 
+  get 'portfolio' => 'portfolio_objects#index'
+  get '/portfolio/:id-:alias' => 'portfolio_objects#show', as: 'portfolio_object'
+
+  get 'services' => 'services#index'
+  get '/services/:id-:alias' => 'services#show', as: 'service'
+
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
