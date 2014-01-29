@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module CatalogHelper
   def children_category_breadcrumbs(res, category, first = false)
     hash = {title: category.title}

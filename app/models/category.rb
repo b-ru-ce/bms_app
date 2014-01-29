@@ -20,13 +20,10 @@ class Category < ActiveRecord::Base
     Category.menu_tree.map{ |c| ["---" * (c.depth - 1) + ' ' + c.title,c.id] }
   end
 
-  def html_title
-    title_of_window.to_s.strip.blank? ? (MyConfig.get_config('default_title') + ' - ' + title) : title_of_window
-  end
-
   def current?(params)
-    (params[:id].to_i == id and params[:controller] == 'catalog' and params[:action] == 'show') or
-        (products.pluck(:id).include?(params[:id].to_i) and params[:controller] == 'catalog' and params[:action] == 'product')
+    (params[:id].to_i == id and params[:controller] == 'catalog' and params[:action] == 'show_category') or
+        (children.pluck(:id).include?(params[:id].to_i) and params[:controller] == 'catalog' and params[:action] == 'show_category') or
+        (products.pluck(:id).include?(params[:id].to_i) and params[:controller] == 'catalog' and params[:action] == 'show_product')
   end
 end
 

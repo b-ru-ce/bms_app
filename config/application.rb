@@ -18,6 +18,7 @@ module BmsApp
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    config.time_zone = 'Ekaterinburg'
     config.i18n.default_locale = :ru
 
     config.action_controller.include_all_helpers = false

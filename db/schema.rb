@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140127091722) do
+ActiveRecord::Schema.define(version: 20140128090419) do
 
   create_table "articles", force: true do |t|
     t.text     "title"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140127091722) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_uid"
+    t.text     "meta"
   end
 
   create_table "categories", force: true do |t|
@@ -93,6 +94,7 @@ ActiveRecord::Schema.define(version: 20140127091722) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "title_of_window"
+    t.text     "meta"
   end
 
   add_index "photo_galleries", ["ancestry"], name: "index_photo_galleries_on_ancestry"

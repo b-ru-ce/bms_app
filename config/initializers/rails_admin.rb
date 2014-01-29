@@ -122,7 +122,7 @@ RailsAdmin.config do |config|
 
   config.model Category do
     navigation_label 'Контент'
-    weight -1
+    weight -3
     nestable_tree({
                       position_field: :sort,
                       max_depth: 2
@@ -161,7 +161,7 @@ RailsAdmin.config do |config|
 
   config.model Product do
     navigation_label 'Контент'
-    weight -1
+    weight -2
     nestable_list({ position_field: :sort })
 
     list do
@@ -337,7 +337,7 @@ RailsAdmin.config do |config|
 
 
   config.model Page do
-    weight -1
+    weight -4
     navigation_label 'Контент'
     nestable_tree({
                       position_field: :sort,

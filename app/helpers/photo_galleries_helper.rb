@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module PhotoGalleriesHelper
   def breadcrumbs
     if @gallery

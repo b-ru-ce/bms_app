@@ -1,3 +1,6 @@
+- html_title @category.html_title
+- html_meta @category.meta
+
 %h1= @category.title
 = render :partial => 'category', :locals => {:items => @category.children}
 

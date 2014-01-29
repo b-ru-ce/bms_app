@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module ArticlesHelper
   def breadcrumbs
     if @article
