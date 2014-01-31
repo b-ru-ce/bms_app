@@ -13,4 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require lib/jquery-ui-1.10.3.custom.min
+//= require lib/jquery.fancybox-1.3.4
+//= require lib/jquery.form.min
+//= require lib/jquery.validate.min
+//= require catalog
+//= require feedback
+//= require app
