@@ -4,6 +4,13 @@ $(document).bind 'page:change', ->
 
 ready = ->
   $('.gallery').fancybox()
+
+  $('.fancybox_in_text').each ->
+    imageurl = $(this).attr('src')
+    $(this).wrap('<a href="' + imageurl + '" rel="gallery1" class="fancybox_link_in_text"></a>')
+
+  $('a.fancybox_link_in_text').fancybox()
+
   feedback()
   catalog()
 

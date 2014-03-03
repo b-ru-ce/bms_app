@@ -1,16 +1,17 @@
+# -*- encoding : utf-8 -*-
 class Ability
   include CanCan::Ability
 
   def initialize(user)
 
-    if user.role?('admin')
+    if user and user.role?('admin')
       can :manage, :all
       can :access, :rails_admin   # grant access to rails_admin
       can :dashboard              # grant access to the dashboard
       cannot :manage, User
       cannot :manage, Role
       cannot [:create, :destroy], MyConfig
-    elsif user.role?('superadmin')
+    elsif user and user.role?('superadmin')
       can :manage, :all
       can :access, :rails_admin   # grant access to rails_admin
       can :dashboard              # grant access to the dashboard

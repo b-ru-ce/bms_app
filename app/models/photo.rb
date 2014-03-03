@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Photo < ActiveRecord::Base
   include ApplicationHelper
   dragonfly_accessor :image
@@ -5,7 +6,6 @@ class Photo < ActiveRecord::Base
   has_ancestry
 
   validates :image_uid, presence: true
-  validates :photo_gallery_id, presence: true
 
   belongs_to :photo_gallery
 
