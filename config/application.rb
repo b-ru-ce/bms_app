@@ -22,5 +22,6 @@ module BmsApp
     config.i18n.default_locale = :ru
 
     config.action_controller.include_all_helpers = false
+    config.exceptions_app = self.routes
   end
 end
